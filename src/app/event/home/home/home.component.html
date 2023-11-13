@@ -1,0 +1,43 @@
+<div id="content">
+  <div id="homePage">
+    <div class="menusSelector">
+      <div class="menuEtape">
+        <label for="etapes">Choix de l'étape :</label>
+        <select name="etapes" id="etapes" (change)="onChangeCity($event)">
+          <option value="">Choix de l'étape :</option>
+          <option value="861">
+            Etape 1 - Fréjus
+          </option>
+          <option value="862">
+            Etape 2 - Bordeaux
+          </option>
+          <option value="863">
+            Etape 3 - Metz
+          </option>
+          <option value="864">
+            Etape 4 - Quiberon
+          </option>
+          <option value="865">
+            Etape 5 - Saint-Jean-de-Monts
+          </option>
+        </select>
+      </div>
+      <div class="menuDivision">
+        <label for="divisions">Choix de la division :</label>
+        <select name="divisions" id="divisions" (change)="onChangeDivision($event)">
+          <option value="">Choix de la division :</option>
+          <option value="D1H">Division 1 Homme</option>
+          <option value="D1F">Division 1 Femme</option>
+          <option value="D2H">Division 2 Homme</option>
+          <option value="D2F">Division 2 Femme</option>
+        </select>
+      </div>
+      <div id="menuShowInfoContainer">
+        <a id="showEventInfo" [routerLink]="['infos', this.eventService.eventId]">
+          Plus d'infos
+        </a>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

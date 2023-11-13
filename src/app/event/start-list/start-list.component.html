@@ -1,0 +1,46 @@
+<app-choise-datas></app-choise-datas>
+
+<table class="tabGeneralRanking">
+  <thead class="hautTableau">
+    <tr class="ElementHautTableau tableHeader">
+      <th>Dossard</th>
+      <th>Nation</th>
+      <th>Athlete</th>
+      <th>Cat</th>
+      <th>U23</th>
+    </tr>
+  </thead>
+  <tbody class="milieuTableau">
+  <tr class="elementMilieuTableau" *ngFor="let result of startList">
+    <td>{{ result.bib }}</td>
+    <td><img class="flags" src="{{result.nationPict}}"/>{{ result.nation }} </td>
+    <td>{{ result.firstname}} {{ result.lastname }}</td>
+    <td>{{ result.categoryRef}}</td>
+    <td>{{ result.sponsor}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<h1>Athlète(s) supplémentaire(s):</h1>
+<table class="tabGeneralRanking">
+  <thead class="hautTableau">
+  <tr class="ElementHautTableau tableHeader">
+    <th>Dossard</th>
+    <th>Nation</th>
+    <th>Athlete</th>
+    <th>Club</th>
+    <th>Cat</th>
+    <th>U23</th>
+  </tr>
+  </thead>
+  <tbody class="milieuTableau">
+  <tr class="elementMilieuTableau" *ngFor="let athletes of remplacants">
+    <td>{{ athletes.bib }}</td>
+    <td><img class="flags" src="{{ athletes.nationPict }}" />{{ athletes.nation }}</td>
+    <td>{{ athletes.firstname }} {{ athletes.lastname }}</td>
+    <td>{{ athletes.team }}</td>
+    <td>{{ athletes.categoryRef }}</td>
+    <td>{{ athletes.sponsor }}</td>
+  </tr>
+  </tbody>
+</table>

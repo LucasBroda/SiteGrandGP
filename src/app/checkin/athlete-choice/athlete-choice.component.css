@@ -1,0 +1,50 @@
+#checkinAthleteList div {
+  /*width: 100%;*/
+  letter-spacing: 1px;
+  background-color: #009fe3;
+  border: 1px solid #312783;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 10px;
+  margin: 5px;
+  line-height: 30px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.flag {
+  height: 25px;
+  margin-left: 10px;
+}
+
+.NAJ {
+  background-color: red;
+  padding: 5px;
+  color: white;
+}
+
+signature-pad canvas {
+  border: 1px dashed gray;
+}
+
+#teamCoachData {
+  width: 80%;
+  text-align: center;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+#infoMessage {
+  margin: 10px;
+  font-size: 24px;
+  font-weight: 100;
+  background-color: var(--color-gpfftri-blue-dark);
+}

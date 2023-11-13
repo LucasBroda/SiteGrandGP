@@ -1,0 +1,19 @@
+<div id="content">
+  <div id="homePage">
+    <div class="buttonsChoice">
+      <div class="buttonChoice" *ngIf="eventService.eventId == '861'|| eventService.eventId =='862'|| eventService.eventId =='863'|| eventService.eventId =='864'|| eventService.eventId =='865'">
+        <button (click)="onButtonDivision('D1H')" type="button" routerLink="D1H">Division 1 Homme</button>
+      </div>
+      <div class="buttonChoice" *ngIf="eventService.eventId == '861'|| eventService.eventId == '862'|| eventService.eventId =='863'|| eventService.eventId =='864'|| eventService.eventId=='865'">
+        <button (click)="onButtonDivision('D1F')" type="button" routerLink="D1F">Division 1 Femme</button>
+      </div>
+      <div class="buttonChoice" *ngIf="eventService.eventId == '863'|| eventService.eventId =='865'">
+        <button (click)="onButtonDivision('D2H')" type="button" routerLink="D2H">Division 2 Homme</button>
+      </div>
+      <div class="buttonChoice" *ngIf="eventService.eventId == '863'|| eventService.eventId =='865'">
+        <button (click)="onButtonDivision('D2F')" type="button" routerLink="D2F">Division 2 Femme</button>
+      </div>
+    </div>
+  </div>
+</div>
+

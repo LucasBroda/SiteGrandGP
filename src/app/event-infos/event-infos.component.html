@@ -1,0 +1,26 @@
+<div id="homeInfos">
+    <div class="blocInfo">
+      <div class="blocHead">
+        <h1>Etape : {{ this.eventService.eventName }}</h1>
+        <p> {{infosEvent.details}} </p>
+      </div>
+    </div>
+    <div class="blocInfo">
+        <img src="{{ infosEvent.image}}">
+    </div>
+    <div class="blocInfo">
+      <div class="blocBottom">
+        <h1>{{ infosEvent.date}}</h1>
+        <p>{{infosEvent.schedules[0]}}</p>
+        <p>{{infosEvent.schedules[1]}}</p>
+        <p>{{infosEvent.schedules[2]}}</p>
+        <p>{{infosEvent.schedules[3]}}</p>
+        <a href ="{{infosEvent.download}}" target="_blank" id="fichierPDF">Briefing</a>
+        <br><a href ="/event/{{this.eventService.eventId}}/{{this.divService.divId}}/startlist" target="_blank" id="startlist">StartList</a>
+        <br><a href ="/event/{{this.eventService.eventId}}/{{this.divService.divId}}/general" target="_blank" id="generalR">Général</a>
+      </div>
+    </div>
+  </div>
+
+
+

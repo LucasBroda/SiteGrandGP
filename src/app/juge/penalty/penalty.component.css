@@ -1,0 +1,63 @@
+#checkinDivisionList {
+}
+
+#checkinDivisionList div {
+  /*width: 100%;*/
+  letter-spacing: 1px;
+  background-color: #009fe3;
+  border: 1px solid #312783;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 10px;
+  margin: 5px;
+  line-height: 30px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#jugePenalty {
+}
+
+#jugePenalty div.athlete {
+  /*width: 100%;*/
+  letter-spacing: 1px;
+  background-color: #009fe3;
+  border: 1px solid #312783;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 10px;
+  margin: 5px;
+}
+#jugePenalty div.archive {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1em;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#athleteList {
+  color: white;
+  font-size: 1.7em;
+  padding: 2px;
+}
+#athleteList li {
+  padding: 5px;
+  margin-top: 5px;
+  display: block;
+  background-color: #009fe3;
+  border: 1px solid #312783;
+}
+#athleteList li button {
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+}

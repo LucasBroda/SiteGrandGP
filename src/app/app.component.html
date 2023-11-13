@@ -1,0 +1,50 @@
+<div id="main">
+  <nav class="navbar">
+    <div class="FFTRIPicture">
+      <img routerLink="/" src="assets/img/logo/Logo_GPFFTRI_white.png" class="clickable">
+    </div>
+    <div class="links">
+      <div class="title">
+        Championnats de France des Clubs<br />de Triathlon de Division 1 et 2
+      </div>
+      <div class="menus">
+        <ul>
+          <li class="events"><a class="active" routerLink="/">Le Grand Prix</a>
+            <!--<li><a class="active" href="/MiniSite/">Les étapes</a>-->
+            <ul class="sub-menu">
+              <li><a class="active" [routerLink]="['event/infos/861']">Evenement Fréjus</a></li>
+              <li><a class="active" [routerLink]="['event/infos/862']">Evenement Bordeaux</a></li>
+              <li><a class="active" [routerLink]="['event/infos/863']">Evenement Metz</a></li>
+              <li><a class="active" [routerLink]="['event/infos/864']">Evenement Quiberon</a></li>
+              <li><a class="active" [routerLink]="['event/infos/865']">Evenement Saint-Jean-De-Monts</a></li>
+            </ul>
+          </li>
+          <li class="events"><a class="active" routerLink="media">Media/Presse</a>
+            <!--
+            <ul class="sub-menu">
+              <li><a class="active" routerLink="media/Article1">Article n°1</a></li>
+              <li><a class="active" routerLink="media/Article2">Article n°2</a></li>
+              <li><a class="active" routerLink="media/Article3">Article n°3</a></li>
+            </ul>
+            -->
+          </li>
+
+          <li><a class="active" routerLink="live">Live</a></li>
+          <li><a class="active" routerLink="contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="PLSPicture">
+      <a href="https://www.prolivesport.fr"><img src="assets/img/logo/logo-PLS_white_web_timerOfficial.png"></a>
+    </div>
+    <a class="button clickable">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+  <app-footer></app-footer>
+</div>

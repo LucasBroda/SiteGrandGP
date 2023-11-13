@@ -1,0 +1,85 @@
+<h2>
+  {{ CheckinService.RaceName }} | {{ CheckinService.EventName }} ({{
+    CheckinService.EventId
+  }})
+</h2>
+<h3>{{ teamName }} <app-star-rating [nbStars]="teamStars"></app-star-rating></h3>
+
+<button routerLink="..">Back Division</button>
+
+<div id="checkinAthleteList">
+  <div *ngFor="let athlete of AthleteList">
+    <span *ngIf="athlete.bib > 0">{{ athlete.bib }} -</span>
+    {{ athlete.lastname }} {{ athlete.firstname }}
+    <img
+      src="http://www.prolivesport.fr/framework/v2.0/pict/flag-cio/{{
+        athlete.nation
+      }}.png"
+      class="flag"
+    />
+    <br />{{ athlete.athleteId }}
+    <span class="NAJ" *ngIf="athlete.statusLive != ''">{{
+      athlete.statusLive
+    }}</span>
+    <br />
+    <button *ngIf="athlete.bib > 0" (click)="DeleteBib(athlete.athleteId)">
+      X
+    </button>
+    <button
+      *ngIf="athlete.bib <= 0 && NbAthleteTeam < 5"
+      (click)="PutTeam(athlete.athleteId)"
+    >
+      TEAM
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button
+      *ngIf="
+        athlete.bib <= 0 && athlete.nation === 'FRA' && athlete.status === 'U23'
+      "
+      (click)="PutSupp(athlete.athleteId)"
+    >
+      A. Supp.
+    </button>
+  </div>
+  <div>
+    <signature-pad
+      [options]="signaturePadOptions"
+      (onBeginEvent)="drawStart()"
+      (onEndEvent)="drawComplete()"
+    >
+    </signature-pad>
+    <br />
+    <input
+      type="text"
+      id="teamCoachData"
+      value="{{ signatureSaveCoachData }}"
+    />
+    <br />
+    <button (click)="TeamValidation()">Save Signature</button>
+    <button (click)="clearSignature()">Clear signature</button>
+    &nbsp;&nbsp;&nbsp;
+    <button routerLink="..">Back Division</button>
+    <div *ngIf="signatureSave" style="font-size: 14px">
+      {{ signatureSaveDate }} {{ signatureSaveCoachData }}
+      <img src="{{ signatureSave }}" style="width: 50%" />
+    </div>
+  </div>
+
+  <!-- Event Calais uniquement -->
+  <div *ngIf="CheckinService.EventId == 867" id="relayAthletePickers">
+    <ng-container *ngFor="let i of coursesCalais">
+      <span>Relai {{ i+1 }} : </span>
+      <select name="" id="relay{{i}}Athlete1" class="relaySelector">
+        <option value="">Choisir un athlète</option>
+        <option *ngFor="let athlete of relayPossibleAthletes" value="{{ athlete.bib }}">#{{ athlete.bib }} {{ athlete.lastname }} {{ athlete.firstname }}</option>
+      </select>
+      <select name="" id="relay{{i}}Athlete2" class="relaySelector">
+        <option value="">Choisir un athlète</option>
+        <option *ngFor="let athlete of relayPossibleAthletes" value="{{ athlete.bib }}">#{{ athlete.bib }} {{ athlete.lastname }} {{ athlete.firstname }}</option>
+      </select>
+      <br>
+    </ng-container>
+    <button (click)="confirmRelayAthletes()">Valider les athlètes de relai</button>
+    <p id="infoMessage">{{ message }}</p>
+  </div>
+</div>

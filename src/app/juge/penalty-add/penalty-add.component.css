@@ -1,0 +1,24 @@
+#jugePenaltyAddList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#jugePenaltyAddList div {
+  /*width: 100%;*/
+  letter-spacing: 1px;
+  background-color: #009fe3;
+  border: 1px solid #312783;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 10px;
+  margin: 5px;
+  line-height: 25px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}

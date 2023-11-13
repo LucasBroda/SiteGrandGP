@@ -1,0 +1,43 @@
+<!--
+<div id="containerGeneralRanking" class="table">
+  <div class="tableField">
+    <div class="tableValue generalRankingTableFieldRank">Rang</div>
+    <div class="tableValue generalRankingTableFieldTeam">Equipe</div>
+  </div>
+  <div class="tableLine" *ngFor="let rank of rankList">
+    <div class="tableValue generalRankingTableFieldRank">
+      {{ rank.rank }}
+    </div>
+    <div class="tableValue generalRankingTableFieldTeam">
+      {{ rank.team }}
+    </div>
+  </div>
+</div>
+-->qz
+<app-choise-datas></app-choise-datas>
+<table class="tabGeneralRanking">
+  <thead class="hautTableau">
+    <tr class="ElementHautTableau tableHeader">
+      <th>Rg.</th>
+      <th>Equipe</th>
+      <th>Frejus</th>
+      <th>Bordeaux</th>
+      <th>Metz</th>
+      <th>Quiberon</th>
+      <th>St-Jean-de-Monts</th>
+      <th>Pts</th>
+    </tr>
+  </thead>
+  <tbody class="milieuTableau">
+    <tr class="elementMilieuTableau" *ngFor="let rank of rankList">
+      <td>{{ rank.rank }}</td>
+      <td>{{ rank.team }}</td>
+      <td>{{ rank.step1_rank }}<br />({{ rank.step1_point }}pts)</td>
+      <td>{{ rank.step2_point }}<br />({{ rank.step2_point }}pts)</td>
+      <td>{{ rank.step3_point }}<br />({{ rank.step3_point }}pts)</td>
+      <td>{{ rank.step4_point }}<br />({{ rank.step4_point }}pts)</td>
+      <td>{{ rank.step5_point }}<br />({{ rank.step5_point }}pts)</td>
+      <td>{{ rank.point }}</td>
+    </tr>
+  </tbody>
+</table>

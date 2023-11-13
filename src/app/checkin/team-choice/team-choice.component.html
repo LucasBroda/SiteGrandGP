@@ -1,0 +1,32 @@
+<h2>
+    {{CheckinService.RaceName}} | {{CheckinService.EventName}} ({{CheckinService.EventId}})
+</h2>
+
+<div id="checkinTeamList">
+    <div *ngIf="DataExport">
+        <textarea style="font-size: 10px; width: 70%;height: 250px;">{{DataExport}}</textarea>
+    </div>
+
+    <div *ngFor="let team of TeamList">
+        <a id="{{team.teamAcronym}}" routerLink="{{team.teamAcronym}}" [ngClass]="{'teamCheckInOK' : team.teamCheckInOK > 0}">
+            {{team.team}} <app-star-rating [nbStars]="team.schoolStar"> </app-star-rating>
+            <span style="color:yellow">
+                {{team.bibStart}} - {{team.bibEnd}} | {{team.teamAcronym}}
+            </span>
+        </a>
+    </div>
+</div>
+
+
+<!--<div>
+    <a routerLink="1532">TRIATHLON CLUB DE LIEVIN</a>
+</div>
+<div>
+    <a routerLink="1465">POISSY TRIATLON</a>
+</div>
+<div>
+    <a routerLink="2005">TRIATHLON LITTORAL 59</a>
+</div>
+<div>
+    <a routerLink="2564">METZ TRIATHLON</a>
+</div>-->

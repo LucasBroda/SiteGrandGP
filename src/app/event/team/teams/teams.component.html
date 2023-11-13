@@ -1,0 +1,24 @@
+<app-choise-datas></app-choise-datas>
+
+<table class="tabGeneralRanking">
+  <thead class="hautTableau">
+  <tr class="ElementHautTableau tableHeader">
+    <th>Rang</th>
+    <th>Club</th>
+    <th>Athlete1</th>
+    <th>Athlete2</th>
+    <th>Athlete3</th>
+    <th>Total</th>
+  </tr>
+  </thead>
+  <tbody class="milieuTableau">
+  <tr class="elementMilieuTableau" *ngFor="let teams of resultTeam">
+    <td>{{ teams.rank }}</td>
+    <td>{{ teams.team }}</td>
+    <td>{{ teams.athlete1_name }} {{ teams.athlete1_time}} <br>({{ teams.athlete1_point}} points)</td>
+    <td>{{ teams.athlete2_name }} {{ teams.athlete2_time}} <br>({{ teams.athlete2_point}} points) </td>
+    <td>{{ teams.athlete3_name }} {{ teams.athlete3_time}} <br>({{ teams.athlete3_point}} points) </td>
+    <td>{{ teams.point }}</td>
+  </tr>
+  </tbody>
+</table>

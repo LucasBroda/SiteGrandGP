@@ -1,0 +1,39 @@
+<app-choise-datas></app-choise-datas>
+
+<div class="showTeams">
+  <h1>Appel des équipes au départ:</h1>
+  <div class="teams">
+      <ul *ngFor="let teams of teamsRanKPoint">
+        <li class="equipes">{{teams.team}} <span class="lineSep">(Classement : {{teams.rank}}, Points : {{teams.point}}): </span></li>
+          <ng-container *ngFor="let athletes of titulaires">
+            <li *ngIf="athletes.team === teams.team" class="contenu">#{{athletes.bib}} {{athletes.firstname}} {{athletes.lastname}}<img class="flags" src="{{athletes.nationPict}}"> {{athletes.nation}}</li>
+          </ng-container>
+        </ul>
+  </div>
+</div>
+
+
+<h1>Athlète(s) supplémentaire(s):</h1>
+<table class="tabGeneralRanking">
+  <thead class="hautTableau">
+    <tr class="ElementHautTableau tableHeader">
+      <th>Dossard</th>
+      <th>Nation</th>
+      <th>Athlete</th>
+      <th>Club</th>
+      <th>Cat</th>
+      <th>U23</th>
+    </tr>
+  </thead>
+  <tbody class="milieuTableau">
+    <tr class="elementMilieuTableau" *ngFor="let athletes of remplacants">
+      <td>{{ athletes.bib }}</td>
+      <td><img  class="flags" src="{{ athletes.nationPict }}" />{{ athletes.nation }}</td>
+      <td>{{ athletes.firstname }} {{ athletes.lastname }}</td>
+      <td>{{ athletes.team }}</td>
+      <td>{{ athletes.categoryRef }}</td>
+      <td>{{ athletes.sponsor }}</td>
+    </tr>
+  </tbody>
+</table>
+

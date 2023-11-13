@@ -1,0 +1,8 @@
+<div class="media-container">
+    <div class="media-card" *ngFor="let article of articles">
+        <a href="{{ article.link }}">
+            <img src="{{ article.image }}" alt="article-thumbnail">
+            <p>{{ article.title }}</p>
+        </a>
+    </div>
+</div>

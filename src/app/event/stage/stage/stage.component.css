@@ -1,0 +1,14 @@
+.buttonsChoice{
+  position: relative;
+}
+.buttonChoice{
+  position: relative;
+}
+.buttonChoice button{
+  border-radius: 5px;
+  width:100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #202020;
+  color: white;
+}

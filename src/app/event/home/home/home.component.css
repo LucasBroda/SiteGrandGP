@@ -1,0 +1,59 @@
+:root {
+  --color-gpfftri-blue-dark: #312783;
+  --color-gpfftri-blue-light: #009fe3;
+  --color-date-bleu-joli: rgb(38, 101, 216);
+  --color-sous-menu: rgb(168, 196, 249);
+}
+
+.menusSelector{
+  display: flex;
+  color: white;
+  background-color: #202020;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.menuEtape, .menuDivision{
+  white-space: nowrap;
+}
+
+.menusSelector label{
+  font-size: 40px;
+  display: flex;
+  margin-left: 10px;
+}
+.menusSelector select{
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 0px 10px 10px 10px;
+}
+
+#menuShowInfoContainer {
+  align-self: center;
+  margin: 25px;
+  margin-left: auto;
+}
+
+#showEventInfo {
+  background-color: var(--color-gpfftri-blue-light);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/***** responsive menusSelector *****/
+@media screen and (max-width:1220px){
+  .menusSelector label{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 450px){
+  .menusSelector{
+    flex-direction: column;
+  }
+}
+/***** end_responsive menuSelector *****/
+

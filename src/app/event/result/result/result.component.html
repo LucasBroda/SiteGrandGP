@@ -1,0 +1,27 @@
+<app-choise-datas></app-choise-datas>
+
+
+<table class="tabGeneralRanking">
+  <thead class="hautTableau">
+  <tr class="ElementHautTableau tableHeader">
+    <th>Rang</th>
+    <th>Dossard</th>
+    <th>Athlete</th>
+    <th>Nation</th>
+    <th>Rg.Cat</th>
+    <th>Club</th>
+    <th>Temps</th>
+  </tr>
+  </thead>
+  <tbody class="milieuTableau">
+  <tr class="elementMilieuTableau" *ngFor="let indiv of resultIndiv">
+    <td>{{ indiv.rank }}</td>
+    <td>{{ indiv.bib }}</td>
+    <td>{{ indiv.firstname}} {{ indiv.lastname }}</td>
+    <td><img class="flags" src="{{indiv.nationPict}}"/>{{ indiv.nation }} </td>
+    <td>{{ indiv.rankCat }}</td>
+    <td>{{ indiv.team }}</td>
+    <td>{{ indiv.time }}</td>
+  </tr>
+  </tbody>
+</table>

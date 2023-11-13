@@ -1,0 +1,18 @@
+<div class="showTeams">
+    <h1>Appel des équipes au départ:</h1>
+    <div class="teams">
+        <ul *ngFor="let teams of teamsRanKPoint">
+          <li class="equipes">{{teams.team}}
+            <span class="lineSep">(Classement : {{teams.rank}}, Points : {{teams.point}}): 
+                Vélos <input type="checkbox">
+                Tenues <input type="checkbox">
+                <button (click)="confirmTeam(teams.team)" class="confirmTeamButton">VALIDER</button>
+            </span>
+        </li> 
+          <ng-container *ngFor="let athletes of athletesGlobaux">
+              <li *ngIf="athletes.team === teams.team" class="contenu">Vélo <input type="checkbox"> Tenue <input type="checkbox"> #{{athletes.bib}} {{athletes.firstname}} {{athletes.lastname}}<img class="flags" src="{{athletes.nationPict}}"> {{athletes.nation}}</li>
+          </ng-container>
+        </ul>
+    </div>
+</div>
+  

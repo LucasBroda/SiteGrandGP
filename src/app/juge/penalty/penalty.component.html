@@ -1,0 +1,118 @@
+<h2>Du - Etape 2 - Calais</h2>
+
+<h1>
+  <span *ngIf="Division">Course {{ Division }} - </span>Pénalités
+</h1>
+
+<button routerLink="/juge" (click)="LoadDivision('')" *ngIf="Division">
+  Back
+</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="Refresh()" *ngIf="Division">Refresh</button>
+
+<div id="checkinDivisionList" *ngIf="!Division">
+  <div>
+    <a routerLink="866/D1F" (click)="LoadDivision('D1F')"
+      >D1F - Division 1 Femme</a
+    >
+  </div>
+  <div>
+    <a routerLink="866/D1H" (click)="LoadDivision('D1H')"
+      >D1H - Division 1 Homme</a
+    >
+  </div>
+  <div>
+    <a routerLink="866/D3F" (click)="LoadDivision('D3F')"
+      >D3F - Division 3 Femme</a
+    >
+  </div>
+  <div>
+    <a routerLink="866/D3H" (click)="LoadDivision('D3H')"
+      >D3H - Division 3 Homme</a
+    >
+  </div>
+  <div>
+    <a routerLink="866/XS" (click)="LoadDivision('XS')">XS</a>
+  </div>
+  <div>
+    <a routerLink="866/J1" (click)="LoadDivision('J1')">6-9 ans</a>
+  </div>
+  <div>
+    <a routerLink="866/J2" (click)="LoadDivision('J2')">10-13 ans</a>
+  </div>
+
+  <!--<div>
+        <a routerLink="806/Para" (click)="LoadDivision('Para')">Para</a>
+    </div>-->
+</div>
+
+<div id="jugePenalty" *ngIf="Division">
+  <h3>Penalities list:</h3>
+
+  <div class="athlete" *ngFor="let athlete of penalityArchive">
+    {{ athlete.bib }} | {{ athlete.penalityType }}
+    <div class="archive">
+      <span *ngIf="athlete.penalityStatus != 'DONE'"
+        >{{ athlete.penalityStatus }}: {{ athlete.penalityAdd }}</span
+      >
+      <span style="color: green" *ngIf="athlete.penalityStatus === 'DONE'"
+        >{{ athlete.penalityStatus }}: {{ athlete.penalityDone }}</span
+      >
+    </div>
+  </div>
+
+  <hr />
+  <h3>Athlètes:</h3>
+  <ul id="athleteList">
+    <li
+      routerLink="692/{{ Division }}/{{ athleteItem.bib }}"
+      *ngFor="let athleteItem of AthleteList; let indexOfelement = index"
+    >
+      <span (click)="DisplayAddPena(indexOfelement)">
+        #{{ athleteItem.bib }} |
+        {{ athleteItem.lastname }}
+        {{ athleteItem.firstname }} | {{ athleteItem.nation }} ({{
+          athleteItem.team
+        }})
+      </span>
+      <span *ngIf="athleteItem.displayBtn">
+        <br /><br />
+        <button (click)="AddPena(athleteItem.bib, 'BIKE')">B -> Bike</button>
+        <button (click)="AddPena(athleteItem.bib, 'DISMOUNT')">
+          D -> Dismount
+        </button>
+        <button (click)="AddPena(athleteItem.bib, 'EQUIPMENTS')">
+          E -> Equipments
+        </button>
+        <button (click)="AddPena(athleteItem.bib, 'LITTERING')">
+          L -> Littering
+        </button>
+        <button (click)="AddPena(athleteItem.bib, 'MOUNT')">M -> Mount</button>
+        <button (click)="AddPena(athleteItem.bib, 'RUN')">R -> Run</button>
+        <button (click)="AddPena(athleteItem.bib, 'SWIM')">S -> Swim</button>
+        <button (click)="AddPena(athleteItem.bib, 'VIOLATIONS')">
+          V -> Violations
+        </button>
+      </span>
+    </li>
+  </ul>
+
+  <!--<div class="athlete">
+        #23 FONTAINE Guillaume (ProLiveSport.fr)
+        <div class="archive">
+            <button (click)="PenaltyAdd(23)" routerLink="23">+</button>
+        </div>
+    </div>
+    <div class="athlete">
+        #24 BORDELOT Pierre (FF TRI)
+        <div class="archive">
+            AREA T1
+            <button>-</button>
+            <br />
+            DISMOUNT
+            <button>-</button>
+            <br />
+            <button (click)="PenaltyAdd(24)" routerLink="24">+</button>
+        </div>
+</div>-->
+</div>

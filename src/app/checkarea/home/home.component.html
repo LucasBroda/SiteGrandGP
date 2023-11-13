@@ -1,0 +1,31 @@
+<div>
+    <select name="checkareaEvent" id="checkareaEvent">
+        <option value="">Choisir une étape</option>
+        <option value="861">Tri - Etape 1 - Fréjus</option>
+        <option value="862">Tri - Etape 2 - Bordeaux</option>
+        <option value="863">Tri - Etape 3 - Metz</option>
+        <option value="864">Tri - Etape 4 - Quiberon</option>
+        <option value="865">Tri - Finale - Saint-Jean-de-Monts</option>
+        <option value="866">Du - Etape 1 - Parthenay</option>
+        <option value="867">Du - Etape 2 - Calais</option>
+        <option value="868">Du - Etape 3 - MSA</option>
+        <option value="869">Du - Etape 4 - Noyon</option>
+        <option value="870">Du - Finale - Avallon</option>
+    </select>
+    
+    <select name="checkareaDiv" id="checkareaDiv">
+        <option value="">Choisir une division</option>
+        <option value="D1H">D1H</option>
+        <option value="D1F">D1F</option>
+        <option value="D2H">D2H</option>
+        <option value="D2F">D2F</option>
+        <option value="D3H">D3H</option>
+        <option value="D3F">D3F</option>
+    </select>
+
+    <button (click)="startCheck()">Valider</button>
+
+    <br>
+    
+    <router-outlet></router-outlet>
+</div>
